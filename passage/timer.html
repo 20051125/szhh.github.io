@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>计时器</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/icon.png" />
+    <link href="/assets/css/timer.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="back">
+            <div class="back-left">
+            </div>
+            <div class="back-right">
+            </div>
+        </div>
+        <div class="timer-left">
+            <div class="big-number-left">
+                <p id="time-display-left" style="color: white;">90s</p>
+            </div>
+            <div class="control">
+                <select onchange="toggle1()" id="select1">
+                    <option value="1">一分半</option>
+                    <option value="2">两分</option>
+                    <option value="3">两分半</option>
+                    <option value="4">三分</option>
+                    <option value="5">四分</option>
+                    <option value="6">五分</option>
+                </select>
+                <button onclick="start1()" id="start-left">开始</button>
+                <button onclick="pause1()">暂停</button>
+                <button onclick="stop1()">结束</button>
+            </div>
+        </div>
+        <div class="timer-right">
+            <div class="big-number-right">
+                <p id="time-display-right" style="color: white;">90s</p>
+            </div>
+            <div class="control-right">
+                <select onchange="toggle2()" id="select2">
+                    <option value="1">一分</option>
+                    <option value="2">两分</option>
+                    <option value="3">两分半</option>
+                    <option value="4">三分</option>
+                    <option value="5">四分</option>
+                    <option value="6">五分</option>
+                </select>
+                <button onclick="start2()">开始</button>
+                <button onclick="pause2()">暂停</button>
+                <button onclick="stop2()">结束</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/assets/js/timer.js"></script>
+<script>
+    document.onkeydown = keyDown;
+    function keyDown(event) {
+        var event = event || window.event;
+        switch (event.keyCode) {
+            case 83:
+                start1();
+                break;
+            case 68:
+                pause1();
+                break;
+            case 70:
+                stop1();
+                break;
+            case 74:
+                start2();
+                break;
+            case 75:
+                pause2();
+                break;
+            case 76:
+                stop2();
+                break;
+        }
+        return false
+    }
+</script>
+
+</html>
